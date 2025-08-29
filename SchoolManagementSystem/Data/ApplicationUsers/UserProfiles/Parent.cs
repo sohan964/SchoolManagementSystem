@@ -6,7 +6,7 @@ namespace SchoolManagementSystem.Data.ApplicationUsers.UserProfiles
     {
         public string? UserId { get; set; }
         [ForeignKey("UserId")]
-        public ApplicationUser? User { get; set; }
+        public ApplicationUser User { get; set; }
         public string? Address { get; set; }
 
     }

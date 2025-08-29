@@ -1,12 +1,12 @@
-﻿
-
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SchoolManagementSystem.Data.ApplicationUsers.UserProfiles
+﻿namespace SchoolManagementSystem.Models.Dtos.StudentDtos
 {
-    public class Student : BaseEntity
+    public class CreateStudentDto
     {
-        public string? DOB {  get; set; }
+        
+
+        //basic info
+        //public int StudentId { get; set; }
+        public string? DOB { get; set; }
 
         public string? Gender { get; set; }
         public string? BloodGroup { get; set; }
@@ -15,18 +15,15 @@ namespace SchoolManagementSystem.Data.ApplicationUsers.UserProfiles
         public string? Address { get; set; }
         public string? City { get; set; }
         public string? Region { get; set; }
-        public string? PostalCode { get; set;}
+        public string? PostalCode { get; set; }
         public string? Country { get; set; } = null;
         public string? Status { get; set; }
 
-
         public string? UserId { get; set; }
-        [ForeignKey("UserId")]
-        public ApplicationUser? User { get; set; }
-
+        //parent info
         public int? ParentId { get; set; }
-        [ForeignKey("ParentId")]
-        public Parent? Parent { get; set; }
-
+        
+        //department
+        public int? DepartmentId { get; set; }
     }
 }

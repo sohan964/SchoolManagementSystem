@@ -5,6 +5,8 @@ using Microsoft.IdentityModel.Tokens;
 using SchoolManagementSystem.Data;
 using SchoolManagementSystem.Data.ApplicationUsers;
 using SchoolManagementSystem.Repositories.Authentication;
+using SchoolManagementSystem.Repositories.DepartmentRepositories;
+using SchoolManagementSystem.Repositories.ProfileRepositories;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,6 +49,9 @@ builder.Services.AddControllers();
 
 //dependencies 
 builder.Services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
+builder.Services.AddTransient<IProfileRepository, ProfileRepository>();
+builder.Services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
